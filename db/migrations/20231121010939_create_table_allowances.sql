@@ -9,7 +9,7 @@ CREATE TABLE allowances (
     created_date DATE NOT NULL DEFAULT (CURRENT_DATE),
     updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
 --     UNIQUE KEY unique_allowances_entry (user_id, year, month) -- 이렇게 하면 Soft Deletion을 못함(can't soft delete by this line)
-    deleted_at TIMESTAMP NULL
+    deleted_at TIMESTAMP NULL DEFAULT NULL
 );
 
 -- migrate:down
