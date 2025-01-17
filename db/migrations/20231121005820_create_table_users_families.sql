@@ -5,7 +5,7 @@ CREATE TABLE users_families (
     family_id BINARY(16) NOT NULL REFERENCES families(id),
     role_id TINYINT UNSIGNED NOT NULL REFERENCES roles(id),
     created_date DATE NOT NULL DEFAULT (CURRENT_DATE),
-    deleted_date DATE NULL
+    deleted_date DATE NULL DEFAULT NULL
 );
 
 -- migrate:down

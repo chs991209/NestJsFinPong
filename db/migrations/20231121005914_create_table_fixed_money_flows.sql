@@ -11,9 +11,9 @@ CREATE TABLE fixed_money_flows (
 --     month TINYINT UNSIGNED NOT NULL,
 --     date TINYINT UNSIGNED NOT NULL,
     flow_date DATE NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
-    deleted_at TIMESTAMP NULL
+    deleted_at TIMESTAMP NULL DEFAULT NULL
 );
 
 -- migrate:down

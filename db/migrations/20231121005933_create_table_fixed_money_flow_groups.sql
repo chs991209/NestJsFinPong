@@ -2,7 +2,7 @@
 CREATE TABLE fixed_money_flow_groups (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-    deleted_at TIMESTAMP NULL
+    deleted_at TIMESTAMP NULL DEFAULT NULL
 );
 
 -- migrate:down
