@@ -10,17 +10,18 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.DB_HOST,
+      host: String(process.env.DB_HOST),
       port: Number(process.env.DB_PORT),
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      username: String(process.env.DB_USERNAME),
+      password: String(process.env.DB_PASSWORD),
+      database: String(process.env.DB_NAME),
       entities: [`${__dirname}/**/entities/*.entity.{ts,js}`],
-      synchronize: false,
-      logging: true,
+      synchronize: Boolean(process.env.DB_SYNC),
+      logging: Boolean(process.env.DB_LOGGING),
     }),
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+}
